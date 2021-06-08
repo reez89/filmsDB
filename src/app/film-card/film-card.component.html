@@ -1,0 +1,27 @@
+<!-- SEARCH BAR -->
+<div class="global-wrapper" fxFlex fxLayout="column">
+  <div class="search-bar" style="margin: 20px;" fxFlex fxLayout fxLayoutAlign="center center">
+    <mat-icon>search
+      <input type="text" [(ngModel)]="searchValue" class="form-control" >
+    </mat-icon>
+  </div>
+<!-- FILM CARDS -->
+  <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+    <div class="items" *ngFor="let item of filmsData | searchfilter: searchValue; let i= index" >
+      <h2> <strong>Title:</strong> {{item.Title}}</h2>
+      <p> <strong>Description:</strong> {{item.Plot}}</p>
+      <p> <strong>Languages:</strong>  {{item.Language}}</p>
+      <p><strong>Average ratings: </strong>{{item.imdbRating}}</p>
+      <p><strong>Tot. of votes: </strong>{{item.imdbVotes}}</p>
+      <app-ratings
+        [rating]='item.rating'
+        [itemId]='[i]'
+        (ratingClick)='ratingComponentClick($event)'
+      ></app-ratings>
+      <p *ngIf='ratingClicked'>You gave to {{itemIdRatingClicked}} {{ratingClicked}} stars</p>
+    </div>
+  </div>
+</div>
+
+
+
