@@ -38,3 +38,7 @@ data una lista di film (JSON allegato), creare un'applicazione con un framework 
 
 TIPS:
 - usare localStorage per il salvataggio delle informazioni relative ai rating.
+
+
+# RESPONSIVE
+Questa piccola webapp per la ricerca dei film è responsive, qunado la dimensione dello schermo dimunisce compare un'hamburger per aprire la sidenav.
